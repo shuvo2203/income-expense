@@ -9,3 +9,9 @@
 .navbar{
   background-color: #7d7d7d !important;
 }
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:90vh;
+}

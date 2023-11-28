@@ -8,7 +8,7 @@ exports.createUser=async(req, res)=>{
     if(existUser){
         res.status(400).json('this user already registered, please login');
     }
-    const user = await User.crreate({
+    const user = await User.create({
         name,
         email,
         password
