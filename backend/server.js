@@ -13,8 +13,10 @@ app.use(cors());
 
 //routes
 const user = require('./routes/userRoute');
+const transection = require('./routes/transectionRoute');
 
 app.use('/api/v1', user);
+app.use('/api/v1', transection);
 
 
 app.listen(PORT,()=>{

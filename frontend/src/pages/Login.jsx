@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import Spinner from '../components/Spinner';
@@ -16,18 +16,29 @@ function Login() {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await axios.post('/login',{
+            const response = await axios.post('http://localhost:5000/api/v1/login',{
                 email,password
             });
+            setLoading(false)
             if(response.status===200){
                 alert('Login Successfull');
+                localStorage.setItem('user', JSON.stringify({...response.data}));
                 setLoading(false);
-                navigate('/home');
+                navigate('/');
             }
         } catch (error) {
+            alert('Login Failed')
             setLoading(false);
+            console.log(error);
         }
     }
+
+    //prevent for login
+    useEffect(()=>{
+        if(localStorage.getItem('user')){
+            navigate('/')
+        }
+    },[navigate]);
 
   return (
     <>

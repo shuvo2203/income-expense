@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import Spinner from '../components/Spinner';
@@ -20,8 +20,10 @@ function Register() {
             const response = await axios.post('http://localhost:5000/api/v1/register',{
                 name,email,password
             });
+            setLoading(false);
             if(response.status===200){
                 alert('Registration Successfull');
+                localStorage.setItem('user', JSON.stringify({...response.data, password:''}));
                 setLoading(false);
                 navigate('/login');
             }
@@ -30,6 +32,14 @@ function Register() {
             console.log(error);
         }
     }
+
+
+//prevent for login user
+useEffect(()=>{
+    if(localStorage.getItem('user')){
+        navigate('/')
+    }
+},[navigate]);
 
   return (
     <>
