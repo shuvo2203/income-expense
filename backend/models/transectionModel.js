@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const transectionSchema = new mongoose.Schema({
+    userid:{
+        type:String,
+        required:[true, 'userid is required']
+    },
     amount: {
         type: Number,
         required: [true, 'amount is required']
@@ -8,6 +12,10 @@ const transectionSchema = new mongoose.Schema({
     category: {
         type: String,
         required: [true, 'category is requied']
+    },
+    type:{
+        type:String,
+        required:[true,'type is required']
     },
     refrence: {
         type: String

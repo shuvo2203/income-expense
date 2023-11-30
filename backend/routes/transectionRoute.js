@@ -6,6 +6,6 @@ const {
 const router = express.Router();
 
 router.route('/add-transection').post(addTransection);
-router.route('/get-transection').get(getAllTransection);
+router.route('/get-transection').post(getAllTransection);
 
 module.exports = router;
