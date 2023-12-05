@@ -2,26 +2,5 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-.content{
-  height:80vh;
-}
-.navbar{
-  background-color: #7d7d7d !important;
-}
-.register{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height:90vh;
-}
-.filters{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:25px;
-}
-.cross{
-  background-color:none;
-  padding:10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

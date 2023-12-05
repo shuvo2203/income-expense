@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-dotenv.config({path:'config/.env'});
+dotenv.config();
 const cors = require('cors');
-require('./config/database');
+require('./db/db');
 
 const PORT = process.env.PORT;
 
@@ -11,12 +11,12 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors());
 
-//routes
-const user = require('./routes/userRoute');
-const transection = require('./routes/transectionRoute');
 
-app.use('/api/v1', user);
-app.use('/api/v1', transection);
+const income = require('./router/incomeRoute');
+const expense = require('./router/expenseRoute');
+
+app.use('/api/v1', income);
+app.use('/api/v1', expense);
 
 
 app.listen(PORT,()=>{

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.SECRET_KEY).then(()=>{
+
+mongoose.connect(process.env.DB_URL).then(()=>{
     console.log('database connected');
 }).catch((error)=>{
     console.log(error);
