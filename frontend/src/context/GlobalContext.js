@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import axios from 'axios';
 
-const BASE_URL = 'localhost:5000/api/v1/';
+// const BASE_URL = 'localhost:5000/api/v1/';
 
 const GlobalContext = createContext();
 
@@ -12,7 +12,7 @@ export const GlobalProvider =({children})=>{
     const[error, setError] = useState(null);
 
     const addIncome=async(income)=>{
-        const response = await axios.post(`${BASE_URL}addIncome`,income);
+        const response = await axios.post('localhost:5000/api/v1/addIncom',income);
     }
 
     return (
