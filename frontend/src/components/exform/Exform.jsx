@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './form.css';
+import './exform.css';
 // import DatePicker from 'react-datepicker';
 // import 'react-datepicker/dist/react-datepicker.css'
 // import { useGlobalContext } from '../../context/GlobalContext';
@@ -17,10 +17,10 @@ function Form(props) {
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const response = await axios.post('http://localhost:5000/api/v1/addIncome',{
+        const response = await axios.post('http://localhost:5000/api/v1/addExpense',{
             title,amount,date,category,description
         });
-        props.getAllIncome();
+        props.getAllExpense();
         if(response.status === 200){
             alert('income added')
         }else{
@@ -74,7 +74,7 @@ function Form(props) {
                         className='form-control'
                     />
                 </div>
-                <button className='btn btn-success'>Add Income</button>
+                <button className='btn btn-danger'>Add Expense</button>
             </form>
         </>
     )
