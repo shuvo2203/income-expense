@@ -7,7 +7,8 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import ClassIcon from '@mui/icons-material/Class';
 import CommentIcon from '@mui/icons-material/Comment';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditNoteIcon from '@mui/icons-material/EditNote';
+import { DateFormate } from '../../utils/DateFormate';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 function Income() {
   const [getincomes, setgetincomes] = useState(['']);
@@ -59,12 +60,10 @@ function Income() {
                   <p className='income-option'><ViewListIcon />{income.title}</p>
                   <p className='income-option'><MonetizationOnIcon />{income.amount}</p>
                   <p className='income-option'><ClassIcon />{income.category}</p>
+                  <p className='income-option'><DateRangeIcon />{DateFormate(income.date)}</p>
                   <p className='income-option'><CommentIcon />{income.description}</p>
                   <button className='delete'  onClick={()=>deleteIncome(income._id)} >
                     <DeleteIcon/>
-                  </button>
-                  <button className='edit'>
-                    <EditNoteIcon />
                   </button>
                 </div>
               </>

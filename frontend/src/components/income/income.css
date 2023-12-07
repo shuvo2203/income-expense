@@ -1,6 +1,6 @@
 .title {
     display: flex;
-    background-color: rgb(200, 245, 200);
+    background-color: rgb(145, 146, 145);
     margin: 15px;
     padding: 15px 10px;
     padding-bottom: 0px;
@@ -21,15 +21,6 @@
     background: none;
     border: none;
     margin-top: -15px;
-    margin-left: 45px;
-    color: white;
-}
-
-.edit {
-    background: none;
-    border: none;
-    margin-top: -15px;
-    margin-left: 15px;
     color: white;
 }
 
