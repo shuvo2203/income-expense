@@ -19,7 +19,6 @@ const expenseSchema = new mongoose.Schema({
     },
     category:{
         type:String,
-        required:true
     },
     description:{
         type:String,
